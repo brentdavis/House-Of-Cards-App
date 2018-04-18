@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"                         
+             x:Class="HouseOfCardsApp.EditPopUp">
+    
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="20, 20, 20, 20">
+        <StackLayout BackgroundColor="White" Padding="0, 10, 0, 5">
+            <Label Text="Edit Player" TextColor="Gray" FontSize="20" HorizontalOptions="Center"></Label>
+            
+            <ScrollView>
+                <StackLayout BackgroundColor="White">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Player Name:"></Label>
+                        <Entry x:Name="PlayerName"></Entry>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Color:"></Label>
+                        <Picker Title="Color" x:Name="picker"
+                VerticalOptions="CenterAndExpand"
+                Margin="10, 0"
+                SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                            <Picker.Items>
+                                <x:String>Black</x:String>
+                                <x:String>Blue</x:String>
+                                <x:String>Fuchsia</x:String>
+                                <x:String>Gray</x:String>
+                                <x:String>Green</x:String>
+                                <x:String>Maroon</x:String>
+                                <x:String>Navy</x:String>
+                                <x:String>Purple</x:String>
+                                <x:String>Teal</x:String>
+                                <x:String>Orange</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                    
+                    <Button Text="Save" TextColor="Black" Clicked="OnClose"></Button>
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </StackLayout>
+</pages:PopupPage>
