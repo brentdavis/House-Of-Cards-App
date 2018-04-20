@@ -17,6 +17,7 @@
 						<ColumnDefinition></ColumnDefinition>
 						<ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
 					</Grid.ColumnDefinitions>
                 
                 <!--<Label Text="House of Cards - Life Counter"  Margin="5,0,0,0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"  />-->
@@ -41,6 +42,11 @@
                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Reset" NumberOfTapsRequired="1"></TapGestureRecognizer>
                         </Image.GestureRecognizers>
                 </Image>
+                    <Image Source="Resources/Drawable/EditBlue.png" Grid.Column="3" Grid.Row="1" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Edit" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                 </Image>
                 </Grid>
 
 		</StackLayout>

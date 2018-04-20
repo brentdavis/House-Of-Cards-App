@@ -16,6 +16,9 @@
       <DependentUpon>Player.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)EditGameSettings.xaml.cs">
+      <DependentUpon>EditGameSettings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)EditPopUp.xaml.cs">
       <DependentUpon>EditPopUp.xaml</DependentUpon>
     </Compile>
@@ -40,9 +43,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="$(MSBuildThisFileDirectory)EditorPU.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)EditGameSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)EditPopUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using HouseOfCardsApp.Controls;
+using Rg.Plugins.Popup.Extensions;
+using Rg.Plugins.Popup.Services;
 
 namespace HouseOfCardsApp
 {
@@ -18,6 +20,8 @@ namespace HouseOfCardsApp
 
         StackLayout parent;
 
+        public String diceSize = "20";
+        public String diceNumber = "1";
         public int playerCount = 0;
         private int playerNumber = 0;
 
@@ -55,17 +59,26 @@ namespace HouseOfCardsApp
 
         private void TapGestureRecognizer_Tapped_Roll(object sender, EventArgs e)
         {
+            
+            int _diceSize = Convert.ToInt32(diceSize);
             int number;
+            String diceText = "";
+            int _diceNumber = Convert.ToInt32(diceNumber);
             Random rand = new Random();
             foreach (Player item in playerList)
             {
-                number = rand.Next(21);
-                if (number == 0)
+                diceText = "";
+                for (int i = 1; i <= _diceNumber; i++)
                 {
-                    number = 1;
-                }
+                    number = rand.Next(_diceSize + 1);
+                    if (number == 0)
+                    {
+                        number = 1;
+                    }
 
-                item.dice = "- " + number.ToString();
+                    diceText = diceText +  number.ToString()  + " | " ;
+                }
+                item.dice = ": " + diceText.Substring(0, diceText.Length -2);
             }
         }
 
@@ -77,6 +90,13 @@ namespace HouseOfCardsApp
                 item.poison = "0";
                 item.dice = "";
             }
+        }
+
+        private async void TapGestureRecognizer_Tapped_Edit(object sender, EventArgs e)
+        {
+
+            var _editGameSet = new EditGameSettings(this);
+            await PopupNavigation.Instance.PushAsync(_editGameSet);
         }
     }
 }

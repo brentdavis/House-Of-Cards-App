@@ -69,7 +69,15 @@ namespace HouseOfCardsApp
         private async void OnClose(object sender, EventArgs e)
         {
             string colorName = picker.Items[picker.SelectedIndex];
-            _player.playername = PlayerName.Text;
+            if (PlayerName.Text.Length > 10)
+            {
+                _player.playername = PlayerName.Text.Substring(0, 10);
+            }
+            else
+            {
+                _player.playername = PlayerName.Text;
+            }
+
             _player.bgColor = nameToColor[colorName];
             await PopupNavigation.Instance.PopAsync();
             
