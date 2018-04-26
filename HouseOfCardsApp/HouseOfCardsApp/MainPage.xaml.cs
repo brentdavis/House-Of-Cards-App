@@ -98,5 +98,16 @@ namespace HouseOfCardsApp
             var _editGameSet = new EditGameSettings(this);
             await PopupNavigation.Instance.PushAsync(_editGameSet);
         }
+
+        private void MenuItemLC_Activated(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void MenuItemDR_Activated(object sender, EventArgs e)
+        {
+            var nextPage = new DiceRoller();
+            await this.Navigation.PushAsync(nextPage);
+        }
     }
 }

@@ -4,8 +4,12 @@
              xmlns:local="clr-namespace:HouseOfCardsApp"
              x:Class="HouseOfCardsApp.MainPage"
 			 xmlns:controls="clr-namespace:HouseOfCardsApp.Controls">
-	<ContentPage.Content>
-	<ScrollView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItemDR" Order="Primary" Activated="MenuItemDR_Activated" Icon="Xamarin.png" Text="Dice Roller" Priority="1" />
+        <ToolbarItem Name="MenuItemDR" Order="Primary" Activated="MenuItemDR_Activated" Icon="Xamarin.png" Text="" Priority="1" />
+        </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
 			<StackLayout x:Name="LifeCounterLayout" >
                 <Grid x:Name="HeaderGrid"  BackgroundColor="#fffff">
 				<Grid.RowDefinitions>
@@ -17,8 +21,7 @@
 						<ColumnDefinition></ColumnDefinition>
 						<ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-					</Grid.ColumnDefinitions>
+                    </Grid.ColumnDefinitions>
                 
                 <!--<Label Text="House of Cards - Life Counter"  Margin="5,0,0,0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"  />-->
                     <Image Source="Resources/Drawable/houseofcards2.png" Margin="5,0,0,0" Grid.Row="0" Grid.Column="0"></Image>
@@ -42,11 +45,11 @@
                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Reset" NumberOfTapsRequired="1"></TapGestureRecognizer>
                         </Image.GestureRecognizers>
                 </Image>
-                    <Image Source="Resources/Drawable/EditBlue.png" Grid.Column="3" Grid.Row="1" >
+                    <!--<Image Source="Resources/Drawable/EditBlue.png" Grid.Column="3" Grid.Row="1" >
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Edit" NumberOfTapsRequired="1"></TapGestureRecognizer>
-                    </Image.GestureRecognizers>
-                 </Image>
+                    </Image.GestureRecognizers>-->
+                 <!--</Image>-->
                 </Grid>
 
 		</StackLayout>

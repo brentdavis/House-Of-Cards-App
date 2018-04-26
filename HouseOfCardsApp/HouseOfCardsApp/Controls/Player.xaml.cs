@@ -214,8 +214,22 @@ namespace HouseOfCardsApp.Controls
         {
             StackLayout parentLayout = (StackLayout)Parent;
             parentLayout.Children.Remove(this);
-            MainPage mainpage = (MainPage)Application.Current.MainPage;
-            mainpage.playerCount--;
+
+            NavigationPage mainpage = (NavigationPage)Application.Current.MainPage;
+
+            MainPage currPage;
+
+            if (Application.Current.MainPage.Navigation.NavigationStack.Count > 0)
+            {
+                //LIFO is the only game in town! - so send back the last page
+
+                int index = Application.Current.MainPage.Navigation.NavigationStack.Count - 1;
+
+                currPage = (MainPage)Application.Current.MainPage.Navigation.NavigationStack[index];
+
+                currPage.playerCount--;
+            }
+                        
         }
     }
 }

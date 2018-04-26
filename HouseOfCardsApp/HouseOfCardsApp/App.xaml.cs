@@ -13,8 +13,9 @@ namespace HouseOfCardsApp
 		{
 			InitializeComponent();
 
-			MainPage = new HouseOfCardsApp.MainPage();
-		}
+			//MainPage = new HouseOfCardsApp.MainPage();
+            MainPage = new NavigationPage(new MainPage());
+        }
 
 		protected override void OnStart ()
 		{
